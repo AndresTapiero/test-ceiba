@@ -68,12 +68,10 @@ public class Calificador {
     }
 
     @Test
-    public void ervinTest() {
-
+    public void ervinTest() throws InterruptedException {
         clickInputSearch();
-
         keypressInputSearch("Ervin");
-
+        Thread.sleep(2000);
         onView(allOf(withId(R.id.name))).check(matches(withText("Ervin Howell")));
         onView(allOf(withId(R.id.phone))).check(matches(withText("010-692-6593 x09125")));
         onView(allOf(withId(R.id.email))).check(matches(withText("Shanna@melissa.tv")));
@@ -83,11 +81,8 @@ public class Calificador {
 
     @Test
     public void leanneTest() {
-
         clickInputSearch();
-
         keypressInputSearch("Leanne");
-
         onView(allOf(withId(R.id.name))).check(matches(withText("Leanne Graham")));
         onView(allOf(withId(R.id.phone))).check(matches(withText("1-770-736-8031 x56442")));
         onView(allOf(withId(R.id.email))).check(matches(withText("Sincere@april.biz")));
@@ -96,20 +91,13 @@ public class Calificador {
 
     @Test
     public void leannePostClickVerPublicacionesTest() throws InterruptedException {
-
         clickInputSearch();
         keypressInputSearch("Leanne");
-
         onView(allOf(withId(R.id.btn_view_post))).perform(click());
         Thread.sleep(4000);
-
         onView(allOf(withId(R.id.name))).check(matches(withText(endsWith("Leanne Graham"))));
         onView(allOf(withId(R.id.phone))).check(matches(withText("1-770-736-8031 x56442")));
-
-
         onView(allOf(withId(R.id.title), withText("sunt aut facere repellat provident occaecati excepturi optio reprehenderit"))).check(matches(withText("sunt aut facere repellat provident occaecati excepturi optio reprehenderit")));
-
-
     }
 
     private void keypressInputSearch(String valueToWrite) {

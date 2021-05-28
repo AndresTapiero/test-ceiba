@@ -29,7 +29,6 @@ public class BaseApplication extends Application {
         Realm.init(this);
         RealmConfiguration configuration = new RealmConfiguration.Builder()
                 .name("realm.ceiba")
-                //.name("myrealm.ceiba")
                 .schemaVersion(3)
                 .deleteRealmIfMigrationNeeded()
                 .build();
